@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const backendApi = axios.create({
-    baseURL: "http://localhost:5000"
+    baseURL: "https://api-iss-tracker.vercel.app"
 });
 
 export async function saveISSPosition(position) {
