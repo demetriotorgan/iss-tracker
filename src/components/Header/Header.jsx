@@ -6,7 +6,7 @@ import { useApiHealth } from '../../hooks/useApiHealth'
 
 const Header = () => {
   const status = useApiHealth();
-  
+
   return (
     <>
       <header className="dashboard-header">
@@ -22,9 +22,10 @@ const Header = () => {
           <Clock />
           <div className="status-container">
             <div className="status-live">
-              <span className="dot"></span> LIVE
+              <span className="dot"></span>
+              {status?.api ? 'LIVE' : 'OFFLINE'}
             </div>
-            <span className="status-label">CONECTADO</span>
+            <span className="status-label">DB:{status?.mongodb}</span>
           </div>
           <div className="iss-info">
             <img src="src/assets/issImage.png" alt="ISS" className="iss-icon" />

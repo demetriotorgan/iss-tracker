@@ -11,7 +11,7 @@ const Clock = () => {
 
     return (
        <div className="utc-clock">
-            <span className="utc-label">UTC</span>
+            <span className="utc-label">SYSTEM</span>
             <span className="utc-time">{timeString(utcTime)}</span>
             <span className="utc-date">{formatarData(utcTime)}</span>
           </div>

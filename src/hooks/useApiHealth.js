@@ -21,6 +21,7 @@ export function useApiHealth(){
                     mongodb:statusCheck.mongodb,
                     readyState:statusCheck.readyState
                 });
+                // console.log('Atualizando estado:', statusCheck);
             } catch (error) {
                   console.error('Health Check Error:', error);
                 addLog('ISS-API', 'Database disconnected');
@@ -33,5 +34,10 @@ export function useApiHealth(){
         }
         verificar();
     },[]);
+
+//     useEffect(() => {
+//     console.log('Status mudou:', status);
+// }, [status]);
+
     return status
 };
