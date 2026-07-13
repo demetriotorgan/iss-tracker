@@ -23,3 +23,9 @@ export async function getActiveOrbit() {
     const response = await backendApi.get("/iss/orbits/active");
     return response.data;
 }
+
+
+export async function getHealthCeck(){
+    const response = await backendApi.get('/iss/health');
+    return response.data;
+}

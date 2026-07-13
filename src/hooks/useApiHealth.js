@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import api from "../services/api";
 import { useMissionLog } from "./useMissionLog";
+import { getHealthCeck } from "../services/backendApi";
 
 export function useApiHealth(){
     const {addLog} = useMissionLog();    
@@ -13,14 +13,16 @@ export function useApiHealth(){
     useEffect(()=>{
         async function verificar(){
             try {
-                const response = await api.get('/iss/health');
+                const statusCheck = await getHealthCeck();
+                // console.log(statusCheck);
                 addLog('ISS-API', 'Database connected');
                 setStatus({
                     api:true,
-                    mongodb:response.data.mongodb,
-                    readyState:response.data.readyState
+                    mongodb:statusCheck.mongodb,
+                    readyState:statusCheck.readyState
                 });
             } catch (error) {
+                  console.error('Health Check Error:', error);
                 addLog('ISS-API', 'Database disconnected');
                  setStatus({
                     api:false,
@@ -30,6 +32,6 @@ export function useApiHealth(){
             }
         }
         verificar();
-    },[addLog]);
+    },[]);
     return status
 };

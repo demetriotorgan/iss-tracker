@@ -6,7 +6,7 @@ import { useApiHealth } from '../../hooks/useApiHealth'
 
 const Header = () => {
   const status = useApiHealth();
-  console.log(status);
+  
   return (
     <>
       <header className="dashboard-header">
