@@ -166,7 +166,8 @@
 }
 
 .dashboard-footer {
-    grid-area: footer;
+    grid-area: footer;    
+    text-align: center;
 }
 
 /* Garante que todos os painéis ocupem exatamente o slot do grid */
