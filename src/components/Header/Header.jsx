@@ -2,8 +2,11 @@ import React from 'react'
 import NasaLogo from '../../assets/NasaLogo'
 import './Header.css'
 import Clock from './Clock'
+import { useApiHealth } from '../../hooks/useApiHealth'
 
 const Header = () => {
+  const status = useApiHealth();
+  console.log(status);
   return (
     <>
       <header className="dashboard-header">
