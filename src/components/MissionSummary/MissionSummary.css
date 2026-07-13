@@ -1,0 +1,184 @@
+.mission-summary {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background: #050b14;
+
+    border: 1px solid rgba(0, 163, 255, 0.25);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.mission-summary::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.03) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+}
+
+.mission-log-container {
+    flex: 1;
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 10px;
+
+    font-family: 'Courier New', monospace;
+}
+
+.mission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+
+    border-bottom: 1px solid rgba(0, 163, 255, 0.15);
+
+    background: rgba(0, 163, 255, 0.05);
+}
+
+.event-counter {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #00ff88;
+}
+
+.mission-header h3 {
+    margin: 0;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.1em;
+
+     color:#00a3ff;
+
+    letter-spacing:0.12em;
+
+    font-family: var(--font-secondary);
+}
+
+.mission-log-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mission-log-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 163, 255, 0.3);
+}
+
+.latest-log {
+    background: rgba(0,163,255,0.08);
+
+    border-left: 2px solid #00a3ff;
+
+    padding-left: 8px;
+}
+
+.log-entry {
+    display: flex;
+    gap: 8px;
+
+    margin-bottom: 6px;
+
+    font-size: 0.72rem;
+
+    line-height: 1.5;
+
+    animation: logAppear 0.3s ease-out;
+}
+
+.log-time {
+    color: #7a8fa6;
+
+    flex-shrink: 0;
+}
+
+.log-type {
+    min-width: 80px;
+
+    font-weight: 600;
+}
+
+.log-tracking .log-type {
+    color: #00ff88;
+}
+
+.log-analytics .log-type {
+    color: #00a3ff;
+}
+
+.log-telemetry .log-type {
+    color: #ffd700;
+}
+
+.log-system .log-type {
+    color: #ffffff;
+}
+
+.log-warning .log-type {
+    color: #ff8a00;
+}
+
+.log-message {
+    color: var(--text-primary);
+
+    word-break: break-word;
+}
+
+.empty-log {
+    color: var(--text-secondary);
+
+    font-family: 'Courier New', monospace;
+
+    font-size: 0.75rem;
+}
+
+.terminal-cursor {
+    color: #00ff88;
+    font-family: 'Courier New', monospace;
+    animation: blink 1s infinite;
+    font-size: 8px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+
+@keyframes logAppear {
+
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}

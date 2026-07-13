@@ -1,0 +1,110 @@
+/* PassPrediction.css */
+
+.pass-prediction {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* Ocupa exatamente o espaço do slot */
+  overflow: hidden;
+  /* Evita a barra de rolagem */
+}
+
+.card-header h3 {
+ font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem; /* Ajustado para legibilidade */
+  color: var(--accent-blue);
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 163, 255, 0.2);
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinha no topo para dar espaço ao conteúdo */
+  padding: 10px;
+  gap: 8px;
+}
+
+.data-row {
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem; /* Fonte reduzida para padrão técnico */
+}
+
+.data-row span {
+  flex: 0 0 auto;
+  /* Impede que os spans cresçam ou encolham */
+  white-space: nowrap;
+  /* Impede que o texto quebre em duas linhas */
+}
+
+.label {
+ color: #8899A6;
+  font-family: 'Inter', sans-serif;
+}
+
+.value {
+  color: #E1E8ED;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+}
+
+/* Estados de loading e erro */
+.card-loading,
+.card-error,
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--accent-blue);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  padding: 20px;
+}
+
+.card-error {
+  color: #FF5555;
+}
+
+/* Adicione estas classes ao seu PassPrediction.css */
+
+.coords-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.coord-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.coord-label {
+  font-size: 0.65rem;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coord-value {
+ color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem; /* Destaque apenas no valor numérico */
+  font-weight: bold;
+}
+
+/* Garante que o container da janela não force expansão */
+.window-container {
+  flex: 1;
+  min-height: 0; 
+  overflow: hidden;
+  
+}

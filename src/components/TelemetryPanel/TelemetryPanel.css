@@ -1,0 +1,76 @@
+.telemetry-container {
+    height: 100%;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 163, 255, 0.3);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    box-shadow: var(--shadow-card);
+}
+
+.telemetry-container h3 {
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    margin-bottom: var(--space-xs);
+    border-bottom: 1px solid rgba(0, 163, 255, 0.2);
+    padding-bottom: var(--space-xs);
+}
+
+.telemetry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin-top: var(--space-xs);
+}
+
+.data-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.data-item span {
+    font-family: var(--font-secondary);
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.data-item p {
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Ajuste dos ícones dentro do item de visibilidade */
+.label-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.icon-sun {
+    color: var(--warning); /* Usando sua variável de status */
+}
+
+.icon-moon {
+    color: var(--accent-light); /* Azul suave */
+}
+
+.telemetry-loading, .telemetry-error {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-secondary);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.full-width {
+    grid-column: span 2;
+}

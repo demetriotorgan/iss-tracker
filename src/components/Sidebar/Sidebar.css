@@ -1,0 +1,52 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: var(--bg-card);
+  border-right: 1px solid rgba(143, 163, 191, 0.1);
+  border-radius: 5px;
+}
+
+.menu-item {
+  display: flex;  
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;  
+}
+
+/* Estado Ativo */
+.menu-item.active {
+  color: var(--accent-light); /* #4FC3FF */
+  
+}
+
+.menu-item.active .menu-title {
+  color: var(--accent-light);
+}
+
+.menu-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-title {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.menu-subtitle {
+  font-family: var(--font-secondary);
+  font-size: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.menu-item:hover {
+  color: var(--accent-blue);
+  border-left: 1px solid var(--accent-light);
+  padding-left: 10px;
+  
+}

@@ -1,0 +1,151 @@
+.dashboard-header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Separa Esquerda e Direita */
+  padding: 0 var(--space-md);
+  background: var(--bg-card);  
+}
+
+/*---------LADO ESQUERDO---------------*/
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-titles h1 {
+  font-family: var(--font-primary); /* Orbitron */
+  font-size: 1.25rem;               /* 20px - Impacto visual ideal */
+  font-weight: 600;
+  letter-spacing: 2px;              /* Um pouco mais espaçado para tech */
+  color: var(--text-primary);
+  line-height: 1;
+  text-transform: uppercase;        /* Característica marcante da NASA */
+  text-shadow: 0 0 8px rgba(51, 204, 255, 0.3); /* Um brilho sutil azul */
+}
+
+.subtitle {
+  font-family: var(--font-secondary); /* Inter */
+  font-size: 0.65rem;                 /* Pequeno e elegante */
+  color: var(--text-secondary);       /* Cinza azulado */
+  letter-spacing: 0.15em;             /* Estilo tech */
+  text-transform: uppercase;
+  margin-top: var(--space-xs);
+}
+
+/* Ajuste fino para o logo ficar alinhado no grid */
+.logo-nasa {
+  display: block;
+}
+
+/*---------LADO DIREITO---------------*/
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg); /* Espaçamento entre os itens da direita */
+}
+
+/*---------RELÓGIO UTC---------------*/
+.utc-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Centraliza o texto */
+  font-family: var(--font-primary); /* Mantém o estilo tech */
+  line-height: 1; /* Mantém as linhas próximas */  
+}
+
+.utc-label {
+  font-size: 0.55rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-xs);
+}
+
+.utc-time {
+font-family: var(--font-primary);
+font-variant-numeric: tabular-nums;
+min-width: 8ch; 
+  display: inline-block;
+  font-size: 1.1rem;
+  color: var(--accent-blue);
+  font-weight: 600;
+  letter-spacing: 1px;
+  /* Opcional: efeito de brilho igual ao do título */
+  text-shadow: 0 0 8px rgba(0, 163, 255, 0.5);
+}
+
+.utc-date {
+  font-size: 0.55rem;
+  color: var(--text-primary);
+  margin-top: var(--space-xs);
+  letter-spacing: 1px;
+}
+
+
+/*---------STATUS MINIMALISTA---------------*/
+.status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.status-live {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+
+/* O ponto vermelho (dot) */
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--danger); /* Usa a variável de erro/perigo que você definiu */
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px var(--danger); /* Um brilho sutil no ponto */
+}
+
+.status-label {
+  font-family: var(--font-secondary);
+  font-size: 0.55rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+/*-----------ISS IMAGEM E NOME-------------*/
+.iss-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.iss-icon {
+  height: 50px; /* Definimos a altura fixa conforme você pediu */
+  width: 90px;  /* Largura calculada para manter a proporção */
+  object-fit: contain; /* Garante que a imagem não distorça */  
+}
+
+.iss-text {
+  display: flex;
+  flex-direction: column; /* Coloca uma linha abaixo da outra */
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

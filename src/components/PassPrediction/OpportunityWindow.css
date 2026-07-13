@@ -1,0 +1,50 @@
+.opportunity-container {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 163, 255, 0.3);
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.opportunity-header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  color: var(--accent-blue);
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 163, 255, 0.2);
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-pill {
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Classes de Estado */
+.status-active {
+  background: rgba(0, 255, 128, 0.15);
+  color: #00FF80;
+  border: 1px solid #00FF80;
+}
+
+.status-inactive {
+  background: rgba(255, 255, 255, 0.05);
+  color: #888;
+  border: 1px solid #444;
+}
+
+.status-alert {
+  background: rgba(255, 165, 0, 0.15);
+  color: #FFA500;
+  border: 1px solid #FFA500;
+}
