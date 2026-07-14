@@ -15,7 +15,7 @@ async function buscarPessoas(){
             number:pessoasISS.length,
             people:pessoasISS
         };
-        console.log('Pessoas na ISS: ', dadosISS);
+        // console.log('Pessoas na ISS: ', dadosISS);
         setPeople(dadosISS);
         
     } catch (error) {

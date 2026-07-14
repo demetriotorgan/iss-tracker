@@ -1,0 +1,74 @@
+.container-pessoas {
+    background: rgba(10, 15, 25, 0.95);    
+    border-radius: 8px;
+    padding: 1rem;
+    color: #e0f7ff;
+    height: 100%;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+    overflow-y: auto;
+}
+
+.container-pessoas h3 {
+    margin: 0 0 1rem 0;
+    color: #00d4ff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.lista-astronautas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-astronautas li {
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.5rem;
+    background: rgba(0, 212, 255, 0.08);
+    border-left: 3px solid #00d4ff;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.lista-astronautas li:hover {
+    background: rgba(0, 212, 255, 0.18);
+    transform: translateX(4px);
+}
+
+.contador-tripulacao {
+    color: #7cff7c;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Barra de rolagem */
+.container-pessoas::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container-pessoas::-webkit-scrollbar-track {
+    background: rgba(5, 10, 20, 0.9);
+    border-radius: 10px;
+}
+
+.container-pessoas::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.container-pessoas::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 255, 0.7);
+    box-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
+}
+
+/* Firefox */
+.container-pessoas {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 212, 255, 0.5) rgba(5, 10, 20, 0.9);
+}
