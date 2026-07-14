@@ -4,6 +4,10 @@ const api = axios.create({
     baseURL: "https://api.wheretheiss.at/v1"
 });
 
+const peopleApi = axios.create({
+    baseURL: 'http://api.open-notify.org'
+});
+
 export async function getISSPosition(){
     try {
         const response = await api.get('/satellites/25544');
@@ -46,6 +50,19 @@ export async function getISSPastPositions(){
             "Não foi possível obter o histórico da ISS"
         );
     }
-}
+};
+
+export async function peopleInSpace(){
+    try {
+        const response = await peopleApi.get('/astros.json');
+        // console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+        throw new Error(
+            'Não foi possível obter pessoas no espaço'
+        );
+    }
+};
 
 export default api;
