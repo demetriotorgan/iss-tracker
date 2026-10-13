@@ -8,17 +8,32 @@ const peopleApi = axios.create({
     baseURL: 'http://api.open-notify.org'
 });
 
-export async function getISSPosition(){
+
+export async function getISSPosition() {
     try {
         const response = await api.get('/satellites/25544');
-        return response.data
+        return response.data;
     } catch (error) {
-        console.error(error);
-        throw new Error(
-            "Não foi possível obter a posição da ISS"
+        const status = error.response?.status;
+
+        console.error('Erro ao consultar posição da ISS:', {
+            status,
+            message: error.message
+        });
+
+        const apiError = new Error(
+            status === 429
+                ? 'Limite de requisições da API da ISS atingido.'
+                : 'Não foi possível obter a posição da ISS.'
         );
+
+        apiError.status = status;
+        apiError.retryAfter = error.response?.headers?.['retry-after'];
+
+        throw apiError;
     }
-};
+}
+
 
 export async function getISSPastPositions(){
     try {
