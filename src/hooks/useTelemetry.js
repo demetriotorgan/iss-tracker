@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { getISSPosition } from '../services/api';
 
@@ -11,10 +10,13 @@ export function useTelemetry(interval = 10000) {
 
     useEffect(() => {
         let active = true;
-        let timer;
-        let retryDelay = interval;
+
+        // Garante que o intervalo respeite o limite mínimo da API (1 requisição por segundo)
+        const safeInterval = Math.max(interval, 5000);
 
         async function fetchData() {
+            if (!active) return;
+
             const time = new Date().toLocaleTimeString('pt-BR', {
                 hour: '2-digit',
                 minute: '2-digit'
@@ -47,9 +49,6 @@ export function useTelemetry(interval = 10000) {
                     }
                 ].slice(-20));
 
-                // Retoma o intervalo normal após o sucesso.
-                retryDelay = interval;
-
             } catch (err) {
                 if (!active) return;
 
@@ -57,25 +56,22 @@ export function useTelemetry(interval = 10000) {
                 setError(err.message);
                 setLoading(false);
 
-                // Evita insistir na API após um HTTP 429.
+                // Se houver estouro de rate limit (429), podemos lidar com logs ou ajustes se necessário
                 if (err.status === 429) {
-                    retryDelay = Math.max(
-                        retryDelay * 2,
-                        30000
-                    );
+                    console.warn('Rate limit atingido. A API está bloqueando temporariamente novas requisições.');
                 }
-            }
-
-            if (active) {
-                timer = setTimeout(fetchData, retryDelay);
             }
         }
 
+        // Executa a primeira vez imediatamente ao montar
         fetchData();
+
+        // Configura o intervalo fixo de repetição de forma segura
+        const timer = setInterval(fetchData, safeInterval);
 
         return () => {
             active = false;
-            clearTimeout(timer);
+            clearInterval(timer);
         };
     }, [interval]);
 
